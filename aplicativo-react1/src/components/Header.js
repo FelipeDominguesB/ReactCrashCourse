@@ -1,12 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types'
-
+import Button from './Button'
 const Header = ({title}) =>{
 
+
+    const HelloThere = () =>{
+        console.log("Hello there!");
+    }
     return(
 
-        <header>
+        <header className="header">
             <h1>{title}</h1>
+            <Button color="green" text="Add" onClickFn={HelloThere}/>
         </header>
 
     )
@@ -14,10 +19,16 @@ const Header = ({title}) =>{
 
 
 Header.defaultProps = {
-    title: 'Seja bem-vindo ao meu primeiro curso de react',
+    title: 'Task Tracker',
 }
 
 Header.propTypes = {
-    title: PropTypes.string,
+    title: PropTypes.string.isRequired,
 }
+
+//Fazendo CSS em javascript
+// const headingStyle = {
+//     color:'red', 
+//     backgroundColor:'black'
+// }
 export default Header;
